@@ -1,14 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package com.jdm.rockpaperscissors;
-
-import java.util.Random;
-import java.util.Scanner;
-
 /**
  *
  * @author  Joe McAdams
@@ -16,6 +5,12 @@ import java.util.Scanner;
  * @date    7/27/21
  * @purpose Rock paper scissors assessment for Java bootcamp
  */
+
+package com.jdm.rockpaperscissors;
+
+import java.util.Random;
+import java.util.Scanner;
+
 public class RockPaperScissors {
     public static void main(String[] args)
     {
@@ -44,8 +39,8 @@ public class RockPaperScissors {
             
             //Round limit validation
             if(rounds < 1 || rounds > 10){
-                System.out.println("That is an invalid number of rounds. Range is 1-10. Try again.");
-                continue;
+                System.out.println("That is an invalid number of rounds. Range is 1-10. Quitting.");
+                break;
             }
             
             //Play game
@@ -101,11 +96,11 @@ public class RockPaperScissors {
                 
                 //Play again?
                 System.out.println();
-                System.out.println("Would you like to play again? Type \"n\" or \"no\" to exit.");
+                System.out.println("Would you like to play again? Type \"n\" or \"no\" to exit or anything else to play again.");
                 playAgain = scanner.nextLine();
                 if(playAgain.toLowerCase().equals("n") || playAgain.toLowerCase().equals("no")){
+                    System.out.println("Thanks for playing!");
                     exit = true;
-                    
                 }
             }
         }while(!exit);
